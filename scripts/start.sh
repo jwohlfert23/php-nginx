@@ -170,19 +170,6 @@ else
     fi
 fi
 
-if [ ! -z "$PUID" ]; then
-  if [ -z "$PGID" ]; then
-    PGID=${PUID}
-  fi
-  deluser nginx
-  addgroup -g ${PGID} nginx
-  adduser -D -S -h /var/cache/nginx -s /sbin/nologin -G nginx -u ${PUID} nginx
-else
-  if [ -z "$SKIP_CHOWN" ]; then
-    chown -Rf nginx.nginx /var/www/html
-  fi
-fi
-
 # Run custom scripts
 if [ -d "/var/www/html/scripts/" ]; then
   # make scripts executable incase they aren't
