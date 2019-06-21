@@ -20,6 +20,7 @@ RUN echo @testing http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repo
     echo /etc/apk/respositories && \
     apk update && \
     apk add --no-cache bash \
+    libzip-dev \
     openssh-client \
     wget \
     supervisor \
@@ -51,6 +52,7 @@ RUN echo @testing http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repo
     libjpeg-turbo-dev && \
     docker-php-ext-configure gd \
       --with-gd \
+      --with-libzip=/usr/include/ \
       --with-freetype-dir=/usr/include/ \
       --with-png-dir=/usr/include/ \
       --with-jpeg-dir=/usr/include/ && \
