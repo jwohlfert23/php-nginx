@@ -48,6 +48,7 @@ RUN echo @testing http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repo
     sqlite-dev \
     nano \
     sudo \
+    npm \
     yarn \
     libjpeg-turbo-dev && \
     docker-php-ext-configure gd \
